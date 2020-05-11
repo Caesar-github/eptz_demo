@@ -739,6 +739,7 @@ int main(int argc, char **argv) {
     PARAM_STRING_APPEND(flow_param, KEY_NAME, "rkrga");
     PARAM_STRING_APPEND(flow_param, KEK_THREAD_SYNC_MODEL, KEY_ASYNCCOMMON);
     // Set output buffer type and size.
+    PARAM_STRING_APPEND(flow_param, KEY_INPUTDATATYPE, IMAGE_NV12);
     PARAM_STRING_APPEND(flow_param, KEY_OUTPUTDATATYPE, IMAGE_RGB888);
     PARAM_STRING_APPEND_TO(flow_param, KEY_BUFFER_WIDTH, width);
     PARAM_STRING_APPEND_TO(flow_param, KEY_BUFFER_HEIGHT, height);
@@ -774,6 +775,10 @@ int main(int argc, char **argv) {
     PARAM_STRING_APPEND(flow_param, KEK_THREAD_SYNC_MODEL, KEY_ASYNCCOMMON);
 
     // Set output buffer type and size.
+    if (render_result)
+      PARAM_STRING_APPEND(flow_param, KEY_INPUTDATATYPE, IMAGE_RGB888);
+    else
+      PARAM_STRING_APPEND(flow_param, KEY_INPUTDATATYPE, IMAGE_NV12);
     PARAM_STRING_APPEND(flow_param, KEY_OUTPUTDATATYPE, IMAGE_RGB888);
     PARAM_STRING_APPEND_TO(flow_param, KEY_BUFFER_WIDTH, npu_width);
     PARAM_STRING_APPEND_TO(flow_param, KEY_BUFFER_HEIGHT, npu_height);
