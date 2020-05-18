@@ -11,8 +11,8 @@ _API void LOGD(const char *format, ...);
 #endif
 
 #if 1
-#define SENSOR_REVOLUSION_W 2688
-#define SENSOR_REVOLUSION_H 1520
+#define SENSOR_REVOLUSION_W 2560
+#define SENSOR_REVOLUSION_H 1440
 
 #define DCLIP_REVOLUSION_W 1920
 #define DCLIP_REVOLUSION_H 1080
